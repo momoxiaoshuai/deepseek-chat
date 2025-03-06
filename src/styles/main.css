@@ -1,0 +1,134 @@
+:root {
+  --primary-color: #10a37f;
+  --background-color: #343541;
+  --chat-background: #444654;
+  --text-color: #fff;
+  --user-message-bg: #343541;
+  --assistant-message-bg: #444654;
+  --border-color: #565869;
+  --hover-color: #4a4b59;
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-container {
+  flex: 1;
+  margin-bottom: 120px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.message {
+  padding: 24px;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: message-fade-in 0.5s ease;
+  max-width: 90%;
+}
+
+.user-message {
+  background-color: var(--user-message-bg);
+  margin-left: auto;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.assistant-message {
+  background-color: var(--assistant-message-bg);
+  margin-right: auto;
+  margin-left: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom, transparent, var(--background-color) 20%);
+  backdrop-filter: blur(10px);
+}
+
+.chat-input {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: block;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #40414f;
+  color: var(--text-color);
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.2);
+}
+
+/* 添加动画 */
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
+
+/* 文本选择样式 */
+::selection {
+  background: rgba(16, 163, 127, 0.2);
+  color: var(--text-color);
+} 
