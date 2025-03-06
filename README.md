@@ -1,7 +1,8 @@
 # DeepSeek Web Chat
 
 一个基于 Vue 3 开发的 Web 聊天界面，用于调用 DeepSeek API 实现 AI 对话功能。
-![image](https://github.com/user-attachments/assets/95cb4c33-1b03-450e-bd03-db6b4259dac0)
+![image](https://github.com/user-attachments/assets/66041177-c7ce-433c-a3f5-fb45f6454f65)
+
 
 
 ## 背景说明
